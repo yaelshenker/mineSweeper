@@ -149,12 +149,14 @@ function renderBoard() {
 
 function cellMarked(elCell, ev, posI, posJ) {
     ev.preventDefault();
-    console.log(ev)
+    
+    
+
     var curCell = gBoard[posI][posJ]
     curCell.isMarked = true
     renderBoard()
     
-    // renderBoard()
+    
 
 }
 
