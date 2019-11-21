@@ -1,0 +1,25 @@
+tbody{
+    background-color: gray;
+    
+    
+
+    
+}
+
+.cell {
+    color: gray;
+    border: 2px solid black;
+    width: 50px;
+    height: 50px;
+    text-align: center
+    
+}
+
+.shown{
+    color: black
+    
+}
+
+.marked{
+    background-color: gray 
+}
