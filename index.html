@@ -8,13 +8,29 @@
     <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body onload="init()">
+    <h1>Mine Sweeper</h1>
     
     <table class="table">
 
     </table>
         
         
-    <div class="start"></div>
+    <div class="start">
+        <button onclick="restartGame(this)">🙂</button>
+    </div>
+    <div class="timer-container">
+        <div class="timer"></div>
+    </div>
+    <div class="levels">
+        <button class="Easy" onclick="startLevel(this)">Easy</button>
+        <button class="Medium" onclick="startLevel(this)">Medium</button>
+        <button class="Hard" onclick="startLevel(this)">Hard</button>
+        
+    </div>
+    <div class="Hint">
+        <button onclick="hint(this)">Hint</button>
+        
+    </div>
     <script src="js/utils.js"></script> 
     <script src="js/main.js"></script> 
 </body>
