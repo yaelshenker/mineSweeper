@@ -20,8 +20,8 @@ h1{
 .cell {
     color: gray;
     border: 2px solid black;
-    width: 30px;
-    height: 30px;
+    width: 22px;
+    height: 22px;
     text-align: center
     
 }
@@ -35,6 +35,12 @@ h1{
     background-color: gray 
 }
 
+.timer-container{
+    margin: 5px;
+    height: 35px;
+
+}
+
 .timer{
     display: flex;
     padding: 10px;
@@ -43,8 +49,30 @@ h1{
 }
 
 .levels{
-    display: flex;
+    display: none;    
     justify-content: center;  
+
+}
+
+.Easy{
+    background-color: #7bc34a;
+    margin: 10px;
+    border-radius: 5px;
+    border-color: black;
+}
+
+.Medium{
+    background-color: #ffff00a3;
+    margin: 10px;
+    border-radius: 5px;
+    border-color: black;
+}
+
+.Hard{
+    background-color: red;
+    margin: 10px;
+    border-radius: 5px;
+    border-color: black;
 
 }
 
@@ -53,12 +81,37 @@ h1{
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    display: none;
     
 }
 
 .start button{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     background-color: tomato;
     margin: 0 auto;
+}
+
+.Hint{
+
+    display: none;
+    justify-content: center;
+    margin: 10px;
+}
+
+.Hint button{
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    border-color: black;
+}
+
+.popup{
+    display: none;
+    position: absolute;
+    top: 30px;
+    border-radius: 2em;
+    padding: 9px;
+    text-align: center;
+    border: 1px dashed tomato;
 }
