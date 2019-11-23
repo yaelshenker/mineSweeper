@@ -49,8 +49,8 @@ function init() {
     clearInterval(gTimerInterval)
     gTimerInterval = null
     gTimer = 1
-    gBoard = creatBoard(gLevel.size, gLevel.size)   
-    console.log(gBoard)    
+    gBoard = creatBoard(gLevel.size, gLevel.size)
+    console.log(gBoard)
     setMinesNegsCount(gBoard)
     renderBoard()
     document.querySelector('.start').style.display = 'block'
@@ -76,7 +76,7 @@ function creatBoard(rows, cols) {
                 isMine: false,
                 isShown: false,
                 isMarked: false
-            }           
+            }
 
             board[i][j] = cell
 
@@ -149,11 +149,11 @@ function renderBoard() {
             className += (cell.isShown) ? `shown` : ''
             className += (cell.isMarked) ? `marked ` : ''
             strHTML += `<td class="${className}" data-i=${i}  data-j=${j} onclick="cellClicked(this,${i},${j})"
-            oncontextmenu="cellMarked(this,event,${i},${j})">`            
+            oncontextmenu="cellMarked(this,event,${i},${j})">`
 
-            if (cell.isShown && cell.isMine) { strHTML += `${MINE}</td>` }
+            if (cell.isMarked) { strHTML += `${FLAG}</td>` }
+            else if (cell.isShown && cell.isMine) { strHTML += `${MINE}</td>` }
             else if (cell.isShown && !cell.isMine) { strHTML += `${cell.minesArroundCount}</td>` }
-            else if (cell.isMarked) { strHTML += `${FLAG}</td>` }
 
         }
         strHTML += '</tr>\n'
@@ -268,9 +268,9 @@ function cellClicked(elCell, posI, posJ, event) {
     }
     else if (!curCell.isMine) {
         curCell.isShown = true
-        
+
         showNegs(elCell, posI, posJ, gBoard)
-        
+
 
         renderBoard()
     }
@@ -279,6 +279,7 @@ function cellClicked(elCell, posI, posJ, event) {
         for (var i = 0; i < gBoard.length; i++) {
             for (var j = 0; j < gBoard.length; j++) {
                 if (gBoard[i][j].isMine) {
+                    gBoard[i][j].isMarked = false
                     gBoard[i][j].isShown = true
                     var elStart = document.querySelector('.start button')
                     elStart.innerText = GAMEOVER
